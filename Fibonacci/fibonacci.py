@@ -6,6 +6,15 @@ def fib(n):
         return n
     return fib(n-1) + fib(n-2)
 
+def fib_efficient(n):
+    F = [0, 1]
+    if n <= 1:
+        return F[n]
+    else:
+        for i in range(2, n + 1):
+            F.append(F[i-1] + F[i-2])
+        return F[n]
+
 # Showing the first 10 in the sequence
 for i in range(10):
     print(fib(i))
